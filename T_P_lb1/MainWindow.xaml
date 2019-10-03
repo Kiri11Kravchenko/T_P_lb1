@@ -28,27 +28,7 @@
         <Button x:Name="btn_z5" Content="Задание 5" HorizontalAlignment="Left" Margin="21,226,0,0" VerticalAlignment="Top" Width="129" Click="Btn_z5_Click"/>
         <Button x:Name="btn_z6" Content="Задание 6" HorizontalAlignment="Left" Margin="21,251,0,0" VerticalAlignment="Top" Width="129" Click="Btn_z6_Click"/>
         <Grid x:Name="InputBox" Visibility="Collapsed">
-            <Grid Background="Black" Opacity="0.8"/>
-            <Border
-            MinWidth="150"
-            Background="Gray" 
-            BorderBrush="Black" 
-            BorderThickness="1" 
-            CornerRadius="0,55,0,55" 
-            HorizontalAlignment="Left" 
-            VerticalAlignment="Center">
-                <StackPanel>
-                    <TextBlock Margin="5" Text="Inter numeric:" FontWeight="Bold" FontFamily="Cambria" />
-                    <TextBox MinWidth="150" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="InputTextBox"/>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Button x:Name="YesButton" Margin="5" Content="Ok" Background="{x:Null}" Click="YesButton_Click"/>
-                        <Button x:Name="NoButton" Margin="5" Content="Cancel" Background="{x:Null}" Click="NoButton_Click" />
-                    </StackPanel>
-                </StackPanel>
-            </Border>
-        </Grid>
-        <Grid x:Name="InputBox1" Visibility="Collapsed">
-            <Grid Background="Black" Opacity="0.8"/>
+            <Grid Background="Gray" Opacity="0.4"/>
             <Border
             MinWidth="150"
             Background="Green" 
@@ -59,7 +39,27 @@
             VerticalAlignment="Center">
                 <StackPanel>
                     <TextBlock Margin="5" Text="Inter numeric:" FontWeight="Bold" FontFamily="Cambria" />
-                    <TextBox MinWidth="150" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="InputTextBox1"/>
+                    <TextBox MinWidth="100" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="InputTextBox"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button x:Name="YesButton" Margin="5" Content="Ok" Background="{x:Null}" Click="YesButton_Click"/>
+                        <Button x:Name="NoButton" Margin="5" Content="Cancel" Background="{x:Null}" Click="NoButton_Click" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Grid>
+        <Grid x:Name="InputBox1" Visibility="Collapsed">
+            <Grid Background="Gray" Opacity="0.5"/>
+            <Border
+            MinWidth="150"
+            Background="Green" 
+            BorderBrush="Black" 
+            BorderThickness="1" 
+            CornerRadius="0,55,0,55" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Center">
+                <StackPanel>
+                    <TextBlock Margin="5" Text="Inter numeric:" FontWeight="Bold" FontFamily="Cambria" />
+                    <TextBox MinWidth="100" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="InputTextBox1"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <Button x:Name="YesButton1" Margin="5" Content="Ok" Background="{x:Null}" Click="YesButton1_Click"/>
                         <Button x:Name="NoButton1" Margin="5" Content="Cancel" Background="{x:Null}" Click="NoButton1_Click" />
