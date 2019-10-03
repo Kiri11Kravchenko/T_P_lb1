@@ -34,27 +34,39 @@ namespace T_P_lb1
             int index;
             try
             {
-                int itemCount = Convert.ToInt32(tbN.Text);
-                if (itemCount < 0)
+                int itemCount;
+                try
                 {
-                    MessageBox.Show("Введите положителное число!");
-                }
-                else
-                {
-                    Random rnd1 = new Random();
-                    int number;
-                    lbMain.Items.Clear();
-                    for (index = 1; index <= itemCount; index++)
+                    itemCount = Convert.ToInt32(tbN.Text);
+                    if (itemCount < 0)
                     {
-                        number = -100 + rnd1.Next(200);
-                        myAL.Add(number);
-                        lbMain.Items.Add(number);
+                        MessageBox.Show("Введите положителное число!");
+                    }
+                    else
+                    {
+                        Random rnd1 = new Random();
+                        int number;
+                        lbMain.Items.Clear();
+                        for (index = 1; index <= itemCount; index++)
+                        {
+                            number = -100 + rnd1.Next(200);
+                            myAL.Add(number);
+                            lbMain.Items.Add(number);
+                        }
                     }
                 }
+
+                catch (System.OverflowException)
+                {
+                    MessageBox.Show("Выход за пределы типа !");
+                }
+
+
+
             }
             catch (System.FormatException)
             {
-                MessageBox.Show("Ввидите цыфру (число) !");
+                MessageBox.Show("Ввидите цыфру (число целого типа) !");
             }
         }
 
@@ -64,34 +76,41 @@ namespace T_P_lb1
             int index;
             try
             {
-                int itemCount = Convert.ToInt32(tbN.Text);
-                if (itemCount < 0)
+                try
                 {
-                    MessageBox.Show("Введите положителное число!");
+                    int itemCount = Convert.ToInt32(tbN.Text);
+                    if (itemCount < 0)
+                    {
+                        MessageBox.Show("Введите положителное число!");
+                    }
+                    else
+                    {
+                        Random rnd1 = new Random();
+                        int number;
+                        lbMain.Items.Clear();
+                        lbMain.Items.Add("Исходный массив");
+                        for (index = 1; index <= itemCount; index++)
+                        {
+                            number = -100 + rnd1.Next(200);
+                            myAL.Add(number);
+                            lbMain.Items.Add(number);
+                        }
+                        myAL.Sort();
+                        lbMain.Items.Add("Отсортированный массив");
+                        foreach (int elem in myAL)
+                        {
+                            lbMain.Items.Add(elem);
+                        }
+                    }
                 }
-                else
+                catch (System.OverflowException)
                 {
-                    Random rnd1 = new Random();
-                    int number;
-                    lbMain.Items.Clear();
-                    lbMain.Items.Add("Исходный массив");
-                    for (index = 1; index <= itemCount; index++)
-                    {
-                        number = -100 + rnd1.Next(200);
-                        myAL.Add(number);
-                        lbMain.Items.Add(number);
-                    }
-                    myAL.Sort();
-                    lbMain.Items.Add("Отсортированный массив");
-                    foreach (int elem in myAL)
-                    {
-                        lbMain.Items.Add(elem);
-                    }
+                    MessageBox.Show("Выход за пределы типа !");
                 }
             }
             catch (System.FormatException)
             {
-                MessageBox.Show("Ввидите цыфру (число) !");
+                MessageBox.Show("Ввидите цыфру (число целого типа) !");
             }
         }
 
@@ -120,7 +139,8 @@ namespace T_P_lb1
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Верия 1.0\nКравченко Кирилл\nМФИ МОАИС 2019");
+            About about = new About();
+            about.Show();
         }
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
@@ -135,36 +155,43 @@ namespace T_P_lb1
 
             try
             {
-                int itemCount = Convert.ToInt32(tbN.Text);
-                if (itemCount < 0)
+                try
                 {
-                    MessageBox.Show("Введите положителное число!");
-                }
-                else
-                {
-                    Random rnd1 = new Random();
-                    int number;
-                    int k = 0;
-                    lbMain.Items.Clear();
-                    myAL = new int[itemCount];
-                    for (index = 0; index < itemCount; index++)
+                    int itemCount = Convert.ToInt32(tbN.Text);
+                    if (itemCount < 0)
                     {
-                        number = -100 + rnd1.Next(200);
-                        myAL[index] = number;
+                        MessageBox.Show("Введите положителное число!");
                     }
-                    for (int i = 1; i < itemCount - 1; i++)
+                    else
                     {
-                        if (myAL[i] > myAL[i - 1] && myAL[i] > myAL[i + 1])
+                        Random rnd1 = new Random();
+                        int number;
+                        int k = 0;
+                        lbMain.Items.Clear();
+                        myAL = new int[itemCount];
+                        for (index = 0; index < itemCount; index++)
                         {
-                            k++;
+                            number = -100 + rnd1.Next(200);
+                            myAL[index] = number;
                         }
+                        for (int i = 1; i < itemCount - 1; i++)
+                        {
+                            if (myAL[i] > myAL[i - 1] && myAL[i] > myAL[i + 1])
+                            {
+                                k++;
+                            }
+                        }
+                        MessageBox.Show("Кол-во элементов больше соседей = " + Convert.ToString(k));
                     }
-                    MessageBox.Show("Кол-во элементов больше соседей = " + Convert.ToString(k));
+                }
+                catch (System.OverflowException)
+                {
+                    MessageBox.Show("Выход за пределы типа !");
                 }
             }
             catch (System.FormatException)
             {
-                MessageBox.Show("Ввидите цыфру (число) !");
+                MessageBox.Show("Ввидите цыфру (число целого типа) !");
             }
         }
 
@@ -175,41 +202,48 @@ namespace T_P_lb1
 
             try
             {
-                int itemCount = Convert.ToInt32(tbN.Text);
-                if (itemCount < 0)
+                try
                 {
-                    MessageBox.Show("Введите положителное число!");
-                }
-                else
-                {
-                    Random rnd1 = new Random();
-                    int number;
-                    bool k = false;
-                    lbMain.Items.Clear();
-                    myAL = new int[itemCount];
-                    for (index = 0; index < itemCount; index++)
+                    int itemCount = Convert.ToInt32(tbN.Text);
+                    if (itemCount < 0)
                     {
-                        number = -100 + rnd1.Next(200);
-                        myAL[index] = number;
+                        MessageBox.Show("Введите положителное число!");
                     }
-                    for (int i = 0; i < itemCount; i++)
+                    else
                     {
-                        if (myAL[i] > 25)
+                        Random rnd1 = new Random();
+                        int number;
+                        bool k = false;
+                        lbMain.Items.Clear();
+                        myAL = new int[itemCount];
+                        for (index = 0; index < itemCount; index++)
                         {
-                            k = true;
+                            number = -100 + rnd1.Next(200);
+                            myAL[index] = number;
                         }
-                        if (k == true)
+                        for (int i = 0; i < itemCount; i++)
                         {
-                            MessageBox.Show("Индекс элемента, большего 25 = " + Convert.ToString(i));
-                            break;
-                        }
+                            if (myAL[i] > 25)
+                            {
+                                k = true;
+                            }
+                            if (k == true)
+                            {
+                                MessageBox.Show("Индекс элемента, большего 25 = " + Convert.ToString(i));
+                                break;
+                            }
 
+                        }
                     }
+                }
+                catch (System.OverflowException)
+                {
+                    MessageBox.Show("Выход за пределы типа !");
                 }
             }
             catch (System.FormatException)
             {
-                MessageBox.Show("Ввидите цыфру (число) !");
+                MessageBox.Show("Ввидите цыфру (число целого типа) !");
             }
         }
 
@@ -220,38 +254,46 @@ namespace T_P_lb1
 
             try
             {
-                int itemCount = Convert.ToInt32(tbN.Text);
-                if (itemCount < 0)
+                try
                 {
-                    MessageBox.Show("Введите положителное число!");
-                }
-                else
-                {
-                    Random rnd1 = new Random();
-                    int number;
-                    int sum = 0;
-                    lbMain.Items.Clear();
-                    myAL = new int[itemCount];
-                    for (index = 0; index < itemCount; index++)
+                    int itemCount = Convert.ToInt32(tbN.Text);
+                    if (itemCount < 0)
                     {
-                        number = -100 + rnd1.Next(200);
-                        myAL[index] = number;
+                        MessageBox.Show("Введите положителное число!");
                     }
-                    for (int i = 0; i < itemCount; i++)
-
+                    else
                     {
-                        sum += myAL[i];
-                        if (myAL[2] < sum)
+                        Random rnd1 = new Random();
+                        int number;
+                        int sum = 0;
+                        lbMain.Items.Clear();
+                        myAL = new int[itemCount];
+                        for (index = 0; index < itemCount; index++)
                         {
-                            MessageBox.Show("Сумма элементов, больше чем 2-й = " + Convert.ToString(sum));
+                            number = -100 + rnd1.Next(200);
+                            myAL[index] = number;
                         }
-                    }
+                        for (int i = 0; i < itemCount; i++)
 
+                        {
+                            sum += myAL[i];
+                            if (myAL[2] < sum)
+                            {
+                                MessageBox.Show("Сумма элементов, больше чем 2-й = " + Convert.ToString(sum));
+                                break;
+                            }
+                        }
+
+                    }
+                }
+                catch (System.OverflowException)
+                {
+                    MessageBox.Show("Выход за пределы типа !");
                 }
             }
             catch (System.FormatException)
             {
-                MessageBox.Show("Ввидите цыфру (число)!");
+                MessageBox.Show("Ввидите цыфру (число целого типа)!");
             }
         }
 
@@ -262,30 +304,37 @@ namespace T_P_lb1
 
             try
             {
-                int itemCount = Convert.ToInt32(tbN.Text);
-                if (itemCount < 0)
+                try
                 {
-                    MessageBox.Show("Введите положителное число!");
-                }
-                else
-                {
-                    Random rnd1 = new Random();
-                    int number;
-
-                    lbMain.Items.Clear();
-                    myAL_g = new int[itemCount];
-                    for (index = 0; index < itemCount; index++)
+                    int itemCount = Convert.ToInt32(tbN.Text);
+                    if (itemCount < 0)
                     {
-                        number = -100 + rnd1.Next(200);
-                        myAL_g[index] = number;
+                        MessageBox.Show("Введите положителное число!");
                     }
-                    InputBox.Visibility = System.Windows.Visibility.Visible;
+                    else
+                    {
+                        Random rnd1 = new Random();
+                        int number;
 
+                        lbMain.Items.Clear();
+                        myAL_g = new int[itemCount];
+                        for (index = 0; index < itemCount; index++)
+                        {
+                            number = -100 + rnd1.Next(200);
+                            myAL_g[index] = number;
+                        }
+                        InputBox.Visibility = System.Windows.Visibility.Visible;
+
+                    }
+                }
+                catch (System.OverflowException)
+                {
+                    MessageBox.Show("Выход за пределы типа !");
                 }
             }
             catch (System.FormatException)
             {
-                MessageBox.Show("Ввидите цыфру (число)!");
+                MessageBox.Show("Ввидите цыфру (число целого типа)!");
             }
         }
         private void YesButton_Click(object sender, RoutedEventArgs e)
@@ -315,7 +364,7 @@ namespace T_P_lb1
             }
             catch (System.FormatException)
             {
-                MessageBox.Show("Ввидите цыфру (число)!");
+                MessageBox.Show("Ввидите цыфру (число целого типа)!");
             }
         }
 
@@ -367,7 +416,7 @@ namespace T_P_lb1
             }
             catch (System.FormatException)
             {
-                MessageBox.Show("Ввидите цыфру (число)!");
+                MessageBox.Show("Ввидите цыфру (число целого типа)!");
             }
         }
 
@@ -383,30 +432,37 @@ namespace T_P_lb1
 
             try
             {
-                int itemCount = Convert.ToInt32(tbN.Text);
-                if (itemCount < 0)
+                try
                 {
-                    MessageBox.Show("Введите положителное число!");
-                }
-                else
-                {
-                    Random rnd1 = new Random();
-                    int number;
-
-                    lbMain.Items.Clear();
-                    myAL_g = new int[itemCount];
-                    for (index = 0; index < itemCount; index++)
+                    int itemCount = Convert.ToInt32(tbN.Text);
+                    if (itemCount < 0)
                     {
-                        number = -100 + rnd1.Next(200);
-                        myAL_g[index] = number;
+                        MessageBox.Show("Введите положителное число!");
                     }
-                    InputBox1.Visibility = System.Windows.Visibility.Visible;
+                    else
+                    {
+                        Random rnd1 = new Random();
+                        int number;
 
+                        lbMain.Items.Clear();
+                        myAL_g = new int[itemCount];
+                        for (index = 0; index < itemCount; index++)
+                        {
+                            number = -100 + rnd1.Next(200);
+                            myAL_g[index] = number;
+                        }
+                        InputBox1.Visibility = System.Windows.Visibility.Visible;
+
+                    }
+                }
+                catch (System.OverflowException)
+                {
+                    MessageBox.Show("Выход за пределы типа !");
                 }
             }
             catch (System.FormatException)
             {
-                MessageBox.Show("Ввидите цыфру (число)!");
+                MessageBox.Show("Ввидите цыфру (число целого типа)!");
             }
         }
 
@@ -416,44 +472,51 @@ namespace T_P_lb1
             int index;
             try
             {
-                int itemCount = Convert.ToInt32(tbN.Text);
-                if (itemCount < 0)
+                try
                 {
-                    MessageBox.Show("Введите положителное число!");
-                }
-                else
-                {
-                    Random rnd1 = new Random();
-                    myAL = new int[itemCount];
-
-                    lbMain.Items.Clear();
-                    for (index = 0; index < itemCount; index++)
+                    int itemCount = Convert.ToInt32(tbN.Text);
+                    if (itemCount < 0)
                     {
-                        myAL[index] = -100 + rnd1.Next(200);
-
-
+                        MessageBox.Show("Введите положителное число!");
                     }
-                    for (int i = 1; i < itemCount - 1; i++)
+                    else
                     {
+                        Random rnd1 = new Random();
+                        myAL = new int[itemCount];
 
-                        if (myAL[i] > myAL[i - 1] && myAL[i] > myAL[i + 1])
+                        lbMain.Items.Clear();
+                        for (index = 0; index < itemCount; index++)
                         {
-                            ListBoxItem item = new ListBoxItem();
-                            item.Content = Convert.ToString(myAL[i]);
-                            item.Foreground = Brushes.Black;
-                            item.Background = Brushes.LightSkyBlue;
-                            lbMain.Items.Add(item);
+                            myAL[index] = -100 + rnd1.Next(200);
+
+
+                        }
+                        for (int i = 1; i < itemCount - 1; i++)
+                        {
+
+                            if (myAL[i] > myAL[i - 1] && myAL[i] > myAL[i + 1])
+                            {
+                                ListBoxItem item = new ListBoxItem();
+                                item.Content = Convert.ToString(myAL[i]);
+                                item.Foreground = Brushes.Black;
+                                item.Background = Brushes.LightSkyBlue;
+                                lbMain.Items.Add(item);
+                            }
+
+                            lbMain.Items.Add(myAL[i]);
+
                         }
 
-                        lbMain.Items.Add(myAL[i]);
-
                     }
-
+                }
+                catch (System.OverflowException)
+                {
+                    MessageBox.Show("Выход за пределы типа !");
                 }
             }
             catch (System.FormatException)
             {
-                MessageBox.Show("Ввидите цыфру (число) !");
+                MessageBox.Show("Ввидите цыфру (число целого типа)!");
             }
         }
     }

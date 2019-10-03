@@ -10,9 +10,9 @@ using System.Windows;
 [assembly: AssemblyTitle("T_P_lb1")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Win-Yagd")]
+[assembly: AssemblyCompany("tsput")]
 [assembly: AssemblyProduct("T_P_lb1")]
-[assembly: AssemblyCopyright("Copyright © Win-Yagd 2019")]
+[assembly: AssemblyCopyright("Кирилл Кравченко")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
