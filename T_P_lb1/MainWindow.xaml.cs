@@ -66,7 +66,7 @@ namespace T_P_lb1
             }
             catch (System.FormatException)
             {
-                MessageBox.Show("Ввидите цыфру (число целого типа) !");
+                MessageBox.Show("Введите число без вещественной части!");
             }
         }
 
@@ -110,7 +110,7 @@ namespace T_P_lb1
             }
             catch (System.FormatException)
             {
-                MessageBox.Show("Ввидите цыфру (число целого типа) !");
+                MessageBox.Show("Введите число без вещественной части!");
             }
         }
 
@@ -191,7 +191,7 @@ namespace T_P_lb1
             }
             catch (System.FormatException)
             {
-                MessageBox.Show("Ввидите цыфру (число целого типа) !");
+                MessageBox.Show("Введите число без вещественной части!");
             }
         }
 
@@ -243,7 +243,7 @@ namespace T_P_lb1
             }
             catch (System.FormatException)
             {
-                MessageBox.Show("Ввидите цыфру (число целого типа) !");
+                MessageBox.Show("Введите число без вещественной части!");
             }
         }
 
@@ -293,7 +293,7 @@ namespace T_P_lb1
             }
             catch (System.FormatException)
             {
-                MessageBox.Show("Ввидите цыфру (число целого типа)!");
+                MessageBox.Show("Введите число без вещественной части!");
             }
         }
 
@@ -334,7 +334,7 @@ namespace T_P_lb1
             }
             catch (System.FormatException)
             {
-                MessageBox.Show("Ввидите цыфру (число целого типа)!");
+                MessageBox.Show("Введите число без вещественной части!");
             }
         }
         private void YesButton_Click(object sender, RoutedEventArgs e)
@@ -364,7 +364,7 @@ namespace T_P_lb1
             }
             catch (System.FormatException)
             {
-                MessageBox.Show("Ввидите цыфру (число целого типа)!");
+                MessageBox.Show("Введите число без вещественной части!");
             }
         }
 
@@ -416,7 +416,7 @@ namespace T_P_lb1
             }
             catch (System.FormatException)
             {
-                MessageBox.Show("Ввидите цыфру (число целого типа)!");
+                MessageBox.Show("Введите число без вещественной части!");
             }
         }
 
@@ -457,12 +457,12 @@ namespace T_P_lb1
                 }
                 catch (System.OverflowException)
                 {
-                    MessageBox.Show("Выход за пределы типа !");
+                    MessageBox.Show("Выход за пределы типа!");
                 }
             }
             catch (System.FormatException)
             {
-                MessageBox.Show("Ввидите цыфру (число целого типа)!");
+                MessageBox.Show("Введите число без вещественной части!");
             }
         }
 
@@ -516,7 +516,7 @@ namespace T_P_lb1
             }
             catch (System.FormatException)
             {
-                MessageBox.Show("Ввидите цыфру (число целого типа)!");
+                MessageBox.Show("Введите число без вещественной части!");
             }
         }
     }
