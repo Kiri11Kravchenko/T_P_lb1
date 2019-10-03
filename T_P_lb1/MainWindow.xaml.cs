@@ -20,6 +20,7 @@ namespace T_P_lb1
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
+    /// //oiuytrertyu
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -446,7 +447,7 @@ namespace T_P_lb1
                     int itemCount = Convert.ToInt32(tbN.Text);
                     if (itemCount < 0)
                     {
-                        MessageBox.Show("Введите положителное число!");
+                        MessageBox.Show("Введите положителное число !");
                     }
                     else
                     {
