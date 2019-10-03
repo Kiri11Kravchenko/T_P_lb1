@@ -173,6 +173,7 @@ namespace T_P_lb1
                         {
                             number = -100 + rnd1.Next(200);
                             myAL[index] = number;
+                            lbMain.Items.Add(number);
                         }
                         for (int i = 1; i < itemCount - 1; i++)
                         {
@@ -181,7 +182,8 @@ namespace T_P_lb1
                                 k++;
                             }
                         }
-                        MessageBox.Show("Кол-во элементов больше соседей = " + Convert.ToString(k));
+                        lbMain.Items.Add("Кол-во элементов больше своих соседей");
+                        lbMain.Items.Add(k);
                     }
                 }
                 catch (System.OverflowException)
@@ -220,6 +222,7 @@ namespace T_P_lb1
                         {
                             number = -100 + rnd1.Next(200);
                             myAL[index] = number;
+                            lbMain.Items.Add(number);
                         }
                         for (int i = 0; i < itemCount; i++)
                         {
@@ -229,7 +232,8 @@ namespace T_P_lb1
                             }
                             if (k == true)
                             {
-                                MessageBox.Show("Индекс элемента, большего 25 = " + Convert.ToString(i));
+                                lbMain.Items.Add("Индекс элемента, большего 25");
+                                lbMain.Items.Add(i);
                                 break;
                             }
 
@@ -272,6 +276,7 @@ namespace T_P_lb1
                         {
                             number = -100 + rnd1.Next(200);
                             myAL[index] = number;
+                            lbMain.Items.Add(number);
                         }
                         for (int i = 0; i < itemCount; i++)
 
@@ -279,7 +284,8 @@ namespace T_P_lb1
                             sum += myAL[i];
                             if (myAL[2] < sum)
                             {
-                                MessageBox.Show("Сумма элементов, больше чем 2-й = " + Convert.ToString(sum));
+                                lbMain.Items.Add("Сумма элементов, больше чем 2-й");
+                                lbMain.Items.Add(sum);
                                 break;
                             }
                         }
@@ -322,6 +328,7 @@ namespace T_P_lb1
                         {
                             number = -100 + rnd1.Next(200);
                             myAL_g[index] = number;
+                            lbMain.Items.Add(number);
                         }
                         InputBox.Visibility = System.Windows.Visibility.Visible;
 
@@ -352,7 +359,8 @@ namespace T_P_lb1
                     }
                     if (check == true)
                     {
-                        MessageBox.Show(" номер первого элемента большего " + K + " = " + i);
+                        lbMain.Items.Add("номер первого элемента большего" + K);
+                        lbMain.Items.Add(i);
                         break;
                     }
                 }
@@ -402,7 +410,8 @@ namespace T_P_lb1
                         }
                         if (check == true)
                         {
-                            MessageBox.Show("Сумма элементов больше чем " + K + " = " + count);
+                            lbMain.Items.Add("Сумма элементов больше чем " + K);
+                            lbMain.Items.Add(count);
                             break;
                         }
                     }
@@ -450,6 +459,7 @@ namespace T_P_lb1
                         {
                             number = -100 + rnd1.Next(200);
                             myAL_g[index] = number;
+                            lbMain.Items.Add(number);
                         }
                         InputBox1.Visibility = System.Windows.Visibility.Visible;
 
