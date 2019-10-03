@@ -28,14 +28,14 @@
         <Button x:Name="btn_z5" Content="Задание 5" HorizontalAlignment="Left" Margin="21,226,0,0" VerticalAlignment="Top" Width="129" Click="Btn_z5_Click"/>
         <Button x:Name="btn_z6" Content="Задание 6" HorizontalAlignment="Left" Margin="21,251,0,0" VerticalAlignment="Top" Width="129" Click="Btn_z6_Click"/>
         <Grid x:Name="InputBox" Visibility="Collapsed">
-            <Grid Background="Black" Opacity="0.5"/>
+            <Grid Background="Black" Opacity="0.8"/>
             <Border
-            MinWidth="250"
+            MinWidth="150"
             Background="Gray" 
             BorderBrush="Black" 
             BorderThickness="1" 
             CornerRadius="0,55,0,55" 
-            HorizontalAlignment="Center" 
+            HorizontalAlignment="Left" 
             VerticalAlignment="Center">
                 <StackPanel>
                     <TextBlock Margin="5" Text="Inter numeric:" FontWeight="Bold" FontFamily="Cambria" />
@@ -48,14 +48,14 @@
             </Border>
         </Grid>
         <Grid x:Name="InputBox1" Visibility="Collapsed">
-            <Grid Background="Black" Opacity="0.5"/>
+            <Grid Background="Black" Opacity="0.8"/>
             <Border
-            MinWidth="250"
+            MinWidth="150"
             Background="Green" 
             BorderBrush="Black" 
             BorderThickness="1" 
             CornerRadius="0,55,0,55" 
-            HorizontalAlignment="Center" 
+            HorizontalAlignment="Left" 
             VerticalAlignment="Center">
                 <StackPanel>
                     <TextBlock Margin="5" Text="Inter numeric:" FontWeight="Bold" FontFamily="Cambria" />
