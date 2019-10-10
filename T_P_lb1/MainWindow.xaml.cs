@@ -297,12 +297,18 @@ namespace T_P_lb1
                         for (int i = 0; i < itemCount; i++)
 
                         {
-                            sum += myAL_g[i];
-                            if (myAL_g[2] < sum)
+                            if (myAL_g.Length >= 2)
                             {
-                                lbMain.Items.Add("Сумма элементов, больше чем 2-й");
-                                lbMain.Items.Add(sum);
-                                break;
+                                sum += myAL_g[i];
+                                if (myAL_g[1] < sum)
+                                {
+                                    lbMain.Items.Add("Сумма элементов, больше чем 2-й");
+                                    lbMain.Items.Add(sum);
+                                    break;
+                                }
+                            }else
+                            {
+                                MessageBox.Show("Недостаточно элементов для решения!");
                             }
                         }
 
@@ -372,24 +378,36 @@ namespace T_P_lb1
                 int K = Convert.ToInt32(InputTextBox.Text);
                 int size = myAL_g.Length;
                 bool check = false;
-                for (int i = 0; i < size; i++)
+
+                if (K > size || K < 0)
                 {
-                    if (myAL_g[i] > K)
-                    {
-                        check = true;
-                    }
-                    if (check == true)
-                    {
-                        lbMain.Items.Add("номер первого элемента большего" + K);
-                        lbMain.Items.Add(i);
-                        break;
-                    }
+
+                    MessageBox.Show("Такого номера не существует !");
+
+                    InputTextBox1.Text = "";
+
                 }
-                if (check == false)
+                else
                 {
-                    MessageBox.Show(" номер первого элемента большего " + K + " не существут ");
+                    for (int i = 0; i < size; i++)
+                    {
+                        if (myAL_g[i] > K)
+                        {
+                            check = true;
+                        }
+                        if (check == true)
+                        {
+                            lbMain.Items.Add("номер первого элемента большего" + K);
+                            lbMain.Items.Add(i);
+                            break;
+                        }
+                    }
+                    if (check == false)
+                    {
+                        MessageBox.Show(" номер первого элемента большего " + K + " не существут ");
+                    }
+                    InputBox.Visibility = System.Windows.Visibility.Collapsed;
                 }
-                InputBox.Visibility = System.Windows.Visibility.Collapsed;
             }
             catch (System.FormatException)
             {
@@ -425,7 +443,7 @@ namespace T_P_lb1
                     for (int i = 0; i < size; i++)
                     {
                         count += myAL_g[i];
-                        if (myAL_g[K] < count)
+                        if (myAL_g[K-1] < count)
                         {
                             check = true;
                         }
