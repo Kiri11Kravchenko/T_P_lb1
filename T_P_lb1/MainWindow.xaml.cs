@@ -17,6 +17,7 @@ using System;
 
 namespace T_P_lb1
 {
+    
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
@@ -27,11 +28,15 @@ namespace T_P_lb1
         {
             InitializeComponent();
         }
-        int[] myAL_g;
+      public int[] myAL_g;
+      public ArrayList myAL = new ArrayList();
+        HistoForm f = new HistoForm();
+
+        public int[] values_global;
 
         private void Btn_1_Click(object sender, RoutedEventArgs e)
         {
-            ArrayList myAL = new ArrayList();
+            //ArrayList myAL = new ArrayList();
             int index;
             try
             {
@@ -48,11 +53,13 @@ namespace T_P_lb1
                         Random rnd1 = new Random();
                         int number;
                         lbMain.Items.Clear();
-                        for (index = 1; index <= itemCount; index++)
+                        f.val = new int[itemCount];
+                        for (index = 0; index < itemCount; index++)
                         {
-                            number = -100 + rnd1.Next(200);
+                            number = 0 + rnd1.Next(200);
                             myAL.Add(number);
                             lbMain.Items.Add(number);
+                            f.val[index] = number;
                         }
                     }
                 }
@@ -73,7 +80,7 @@ namespace T_P_lb1
 
         private void Btn_2_Click(object sender, RoutedEventArgs e)
         {
-            ArrayList myAL = new ArrayList();
+           // ArrayList myAL = new ArrayList();
             int index;
             try
             {
@@ -89,12 +96,14 @@ namespace T_P_lb1
                         Random rnd1 = new Random();
                         int number;
                         lbMain.Items.Clear();
+                        f.val = new int[itemCount];
                         lbMain.Items.Add("Исходный массив");
-                        for (index = 1; index <= itemCount; index++)
+                        for (index = 0; index < itemCount; index++)
                         {
-                            number = -100 + rnd1.Next(200);
+                            number = 0 + rnd1.Next(200);
                             myAL.Add(number);
                             lbMain.Items.Add(number);
+                            f.val[index] = number;
                         }
                         myAL.Sort();
                         lbMain.Items.Add("Отсортированный массив");
@@ -168,13 +177,15 @@ namespace T_P_lb1
                         Random rnd1 = new Random();
                         int number;
                         int k = 0;
+                        f.val = new int[itemCount];
                         lbMain.Items.Clear();
                         myAL = new int[itemCount];
                         for (index = 0; index < itemCount; index++)
                         {
-                            number = -100 + rnd1.Next(200);
+                            number = 0 + rnd1.Next(200);
                             myAL[index] = number;
                             lbMain.Items.Add(number);
+                            f.val[index] = number;
                         }
                         for (int i = 1; i < itemCount - 1; i++)
                         {
@@ -218,12 +229,14 @@ namespace T_P_lb1
                         int number;
                         bool k = false;
                         lbMain.Items.Clear();
+                        f.val = new int[itemCount];
                         myAL = new int[itemCount];
                         for (index = 0; index < itemCount; index++)
                         {
-                            number = -100 + rnd1.Next(200);
+                            number = 0 + rnd1.Next(200);
                             myAL[index] = number;
                             lbMain.Items.Add(number);
+                            f.val[index] = number;
                         }
                         for (int i = 0; i < itemCount; i++)
                         {
@@ -254,7 +267,7 @@ namespace T_P_lb1
 
         private void Btn_z3_Click(object sender, RoutedEventArgs e)
         {
-            int[] myAL;
+            //int[] myAL;
             int index;
 
             try
@@ -272,18 +285,20 @@ namespace T_P_lb1
                         int number;
                         int sum = 0;
                         lbMain.Items.Clear();
-                        myAL = new int[itemCount];
+                        f.val = new int[itemCount];
+                        myAL_g = new int[itemCount];
                         for (index = 0; index < itemCount; index++)
                         {
-                            number = -100 + rnd1.Next(200);
-                            myAL[index] = number;
+                            number = 0 + rnd1.Next(200);
+                            myAL_g[index] = number;
                             lbMain.Items.Add(number);
+                            f.val[index] = number;
                         }
                         for (int i = 0; i < itemCount; i++)
 
                         {
-                            sum += myAL[i];
-                            if (myAL[2] < sum)
+                            sum += myAL_g[i];
+                            if (myAL_g[2] < sum)
                             {
                                 lbMain.Items.Add("Сумма элементов, больше чем 2-й");
                                 lbMain.Items.Add(sum);
@@ -322,23 +337,28 @@ namespace T_P_lb1
                     {
                         Random rnd1 = new Random();
                         int number;
-
+                        
                         lbMain.Items.Clear();
                         myAL_g = new int[itemCount];
+                        f.val = new int[itemCount];
                         for (index = 0; index < itemCount; index++)
                         {
-                            number = -100 + rnd1.Next(200);
+                            number = 0 + rnd1.Next(200);
                             myAL_g[index] = number;
                             lbMain.Items.Add(number);
+                            f.val[index] = myAL_g[index];
                         }
                         InputBox.Visibility = System.Windows.Visibility.Visible;
+                        
 
                     }
+                    
                 }
                 catch (System.OverflowException)
                 {
                     MessageBox.Show("Выход за пределы типа !");
                 }
+                
             }
             catch (System.FormatException)
             {
@@ -453,14 +473,16 @@ namespace T_P_lb1
                     {
                         Random rnd1 = new Random();
                         int number;
-
+                        f.val = new int[itemCount];
                         lbMain.Items.Clear();
                         myAL_g = new int[itemCount];
                         for (index = 0; index < itemCount; index++)
                         {
-                            number = -100 + rnd1.Next(200);
+                            number = 0 + rnd1.Next(200);
                             myAL_g[index] = number;
                             lbMain.Items.Add(number);
+                            f.val[index] = number;
+
                         }
                         InputBox1.Visibility = System.Windows.Visibility.Visible;
 
@@ -494,12 +516,12 @@ namespace T_P_lb1
                     {
                         Random rnd1 = new Random();
                         myAL = new int[itemCount];
-
+                        f.val = new int[itemCount];
                         lbMain.Items.Clear();
                         for (index = 0; index < itemCount; index++)
                         {
-                            myAL[index] = -100 + rnd1.Next(200);
-
+                            myAL[index] = 0 + rnd1.Next(200);
+                            f.val[index] = myAL[index];
 
                         }
                         for (int i = 1; i < itemCount - 1; i++)
@@ -529,6 +551,14 @@ namespace T_P_lb1
             {
                 MessageBox.Show("Введите число без вещественной части!");
             }
+        }
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+            
+
+            f.Show();
+            f.Refresh();
         }
     }
 }
