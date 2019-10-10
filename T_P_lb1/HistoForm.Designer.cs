@@ -51,6 +51,7 @@
             this.Controls.Add(this.picHisto);
             this.Name = "HistoForm";
             this.Text = "HistoForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HistoForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.picHisto)).EndInit();
             this.ResumeLayout(false);
 

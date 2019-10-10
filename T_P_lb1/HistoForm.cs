@@ -19,6 +19,7 @@ namespace T_P_lb1
         }
      
         public int[] val;
+       public bool flag = false;
         
         private void picHisto_Resize(object sender, EventArgs e)
         {
@@ -48,9 +49,10 @@ namespace T_P_lb1
             gr.Transform = transformation;
 
             // Нарисуем гистограмму.
-            using (Pen thin_pen = new Pen(Color.Black, 0))
+            for (int i = 0; i < values.Length; i++)
+                using (Pen thin_pen = new Pen(Colors[i % Colors.Length], 0))
             {
-                for (int i = 0; i < values.Length; i++)
+                
                 {
 
 
@@ -82,7 +84,16 @@ namespace T_P_lb1
             
             DrawHistogram(e.Graphics, picHisto.BackColor, val,
        picHisto.ClientSize.Width, picHisto.ClientSize.Height);
-            val = null;
+            
+        }
+
+        private void HistoForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (flag == false)
+            {
+                e.Cancel = true;
+                this.Hide();
+            }
         }
     }
 }
