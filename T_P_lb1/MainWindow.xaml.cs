@@ -193,6 +193,14 @@ namespace T_P_lb1
                             {
                                 k++;
                             }
+                            if (myAL[0] > myAL[itemCount-1] && myAL[0] > myAL[1])
+                            {
+                                k++;
+                            }
+                            if (myAL[itemCount-1] > myAL[itemCount - 2] && myAL[itemCount-1] > myAL[0])
+                            {
+                                k++;
+                            }
                         }
                         lbMain.Items.Add("Кол-во элементов больше своих соседей");
                         lbMain.Items.Add(k);
@@ -589,6 +597,28 @@ namespace T_P_lb1
         {
             f.flag = true;
             f.Close();
+        }
+
+        private void MenuItem_Click_3(object sender, RoutedEventArgs e)
+        {
+            double sum = 0;
+            int len = f.val.Length;
+            double p =1.0/len;
+           
+            for (int i = 0; i < len; i++)
+            {
+                sum += f.val[i] *p;
+                
+            }
+            for(int i=0;i< len; i++)
+            {
+                if (f.val[i] > sum)
+                {
+                    lbMain.Items.Add("Номер элемента больше мат ожидания ");
+                    lbMain.Items.Add(i + 1);
+                    break;
+                }
+            }
         }
     }
 }
