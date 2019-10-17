@@ -193,14 +193,15 @@ namespace T_P_lb1
                             {
                                 k++;
                             }
-                            if (myAL[0] > myAL[itemCount-1] && myAL[0] > myAL[1])
-                            {
-                                k++;
-                            }
-                            if (myAL[itemCount-1] > myAL[itemCount - 2] && myAL[itemCount-1] > myAL[0])
-                            {
-                                k++;
-                            }
+                            
+                        }
+                        if (myAL[0] > myAL[itemCount - 1] && myAL[0] > myAL[1])
+                        {
+                            k++;
+                        }
+                        if (myAL[itemCount - 1] > myAL[itemCount - 2] && myAL[itemCount - 1] > myAL[0])
+                        {
+                            k++;
                         }
                         lbMain.Items.Add("Кол-во элементов больше своих соседей");
                         lbMain.Items.Add(k);
