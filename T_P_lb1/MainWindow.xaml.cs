@@ -596,6 +596,11 @@ namespace T_P_lb1
             f.flag = true;
             this.Close();
         }
+
+        private void MenuItem_Click_4(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
     
