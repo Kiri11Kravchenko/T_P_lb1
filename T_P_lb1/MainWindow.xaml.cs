@@ -47,12 +47,14 @@ namespace T_P_lb1
                         Random rnd1 = new Random();
                         int number;
                         myAL_g = new int[itemCount];
+                        f.val = new int[itemCount];
                         lbMain.Items.Clear();
                         for (index = 0; index < itemCount; index++)
                         {
                             number = -100 + rnd1.Next(200);
                             myAL.Add(number);
                             myAL_g[index] = number;
+                            f.val[index] = number;
                             lbMain.Items.Add(number);
                         }
                     }
@@ -91,12 +93,14 @@ namespace T_P_lb1
                         int number;
                         lbMain.Items.Clear();
                         myAL_g = new int[itemCount];
+                        f.val = new int[itemCount];
                         lbMain.Items.Add("Исходный массив");
                         for (index = 0; index < itemCount; index++)
                         {
                             number = -100 + rnd1.Next(200);
                             myAL.Add(number);
                             myAL_g[index] = number;
+                            f.val[index] = number;
                             lbMain.Items.Add(number);
                         }
                         myAL.Sort();
@@ -173,12 +177,14 @@ namespace T_P_lb1
                         int k = 0;
                         lbMain.Items.Clear();
                         myAL = new int[itemCount];
+                        f.val = new int[itemCount];
                         myAL_g = new int[itemCount];
                         for (index = 0; index < itemCount; index++)
                         {
                             number = -100 + rnd1.Next(200);
                             myAL[index] = number;
                             myAL_g[index] = number;
+                            f.val[index] = number;
                             lbMain.Items.Add(number);
                         }
                         for (int i = 1; i < itemCount - 1; i++)
@@ -233,12 +239,14 @@ namespace T_P_lb1
                         bool k = false;
                         lbMain.Items.Clear();
                         myAL_g = new int[itemCount];
+                        f.val = new int[itemCount];
                         myAL = new int[itemCount];
                         for (index = 0; index < itemCount; index++)
                         {
                             number = -100 + rnd1.Next(200);
                             myAL[index] = number;
                             myAL_g[index] = number;
+                            f.val[index] = number;
                             lbMain.Items.Add(number);
                         }
                         for (int i = 0; i < itemCount; i++)
@@ -289,12 +297,14 @@ namespace T_P_lb1
                         int sum = 0;
                         lbMain.Items.Clear();
                         myAL_g = new int[itemCount];
+                        f.val = new int[itemCount];
                         myAL = new int[itemCount];
                         for (index = 0; index < itemCount; index++)
                         {
                             number = -100 + rnd1.Next(200);
                             myAL[index] = number;
                             myAL_g[index] = number;
+                            f.val[index] = number;
                             lbMain.Items.Add(number);
                         }
                         for (int i = 0; i < itemCount; i++)
@@ -343,10 +353,12 @@ namespace T_P_lb1
 
                         lbMain.Items.Clear();
                         myAL_g = new int[itemCount];
+                        f.val = new int[itemCount];
                         for (index = 0; index < itemCount; index++)
                         {
                             number = -100 + rnd1.Next(200);
                             myAL_g[index] = number;
+                            f.val[index] = number;
                             lbMain.Items.Add(number);
                         }
                         InputBox.Visibility = System.Windows.Visibility.Visible;
@@ -474,10 +486,12 @@ namespace T_P_lb1
 
                         lbMain.Items.Clear();
                         myAL_g = new int[itemCount];
+                        f.val = new int[itemCount];
                         for (index = 0; index < itemCount; index++)
                         {
                             number = -100 + rnd1.Next(200);
                             myAL_g[index] = number;
+                            f.val[index] = number;
                             lbMain.Items.Add(number);
                         }
                         InputBox1.Visibility = System.Windows.Visibility.Visible;
@@ -512,13 +526,13 @@ namespace T_P_lb1
                     {
                         Random rnd1 = new Random();
                         myAL = new int[itemCount];
-
+                        f.val = new int[itemCount];
                         lbMain.Items.Clear();
                         for (index = 0; index < itemCount; index++)
                         {
                             myAL[index] = -100 + rnd1.Next(200);
 
-
+                            f.val[index] = myAL[index];
                         }
                         for (int i = 1; i < itemCount - 1; i++)
                         {
