@@ -599,7 +599,16 @@ namespace T_P_lb1
 
         private void MenuItem_Click_4(object sender, RoutedEventArgs e)
         {
+            if (f.val == null)
+            {
+                MessageBox.Show("Нет данных для вывода!");
+            }
+            else
+            {
 
+                f.Show();
+                f.Refresh();
+            }
         }
     }
 }
