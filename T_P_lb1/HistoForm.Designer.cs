@@ -40,6 +40,8 @@
             this.picHisto.Size = new System.Drawing.Size(800, 450);
             this.picHisto.TabIndex = 0;
             this.picHisto.TabStop = false;
+            this.picHisto.Paint += new System.Windows.Forms.PaintEventHandler(this.picHisto_Paint);
+            this.picHisto.Resize += new System.EventHandler(this.picHisto_Resize);
             // 
             // HistoForm
             // 
@@ -49,6 +51,7 @@
             this.Controls.Add(this.picHisto);
             this.Name = "HistoForm";
             this.Text = "HistoForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HistoForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.picHisto)).EndInit();
             this.ResumeLayout(false);
 
