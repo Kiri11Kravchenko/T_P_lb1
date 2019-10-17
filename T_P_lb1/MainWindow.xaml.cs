@@ -46,11 +46,13 @@ namespace T_P_lb1
                     {
                         Random rnd1 = new Random();
                         int number;
+                        myAL_g = new int[itemCount];
                         lbMain.Items.Clear();
-                        for (index = 1; index <= itemCount; index++)
+                        for (index = 0; index < itemCount; index++)
                         {
                             number = -100 + rnd1.Next(200);
                             myAL.Add(number);
+                            myAL_g[index] = number;
                             lbMain.Items.Add(number);
                         }
                     }
@@ -88,11 +90,13 @@ namespace T_P_lb1
                         Random rnd1 = new Random();
                         int number;
                         lbMain.Items.Clear();
+                        myAL_g = new int[itemCount];
                         lbMain.Items.Add("Исходный массив");
                         for (index = 1; index <= itemCount; index++)
                         {
                             number = -100 + rnd1.Next(200);
                             myAL.Add(number);
+                            myAL_g[index] = number;
                             lbMain.Items.Add(number);
                         }
                         myAL.Sort();
@@ -169,10 +173,12 @@ namespace T_P_lb1
                         int k = 0;
                         lbMain.Items.Clear();
                         myAL = new int[itemCount];
+                        myAL_g = new int[itemCount];
                         for (index = 0; index < itemCount; index++)
                         {
                             number = -100 + rnd1.Next(200);
                             myAL[index] = number;
+                            myAL_g[index] = number;
                             lbMain.Items.Add(number);
                         }
                         for (int i = 1; i < itemCount - 1; i++)
@@ -181,6 +187,15 @@ namespace T_P_lb1
                             {
                                 k++;
                             }
+                            
+                        }
+                        if (myAL[0] > myAL[1] && myAL[0] > myAL[itemCount - 1])
+                        {
+                            k++;
+                        }
+                        if (myAL[itemCount - 1] > myAL[0] && myAL[itemCount - 1] > myAL[itemCount - 2])
+                        {
+                            k++;
                         }
                         lbMain.Items.Add("Кол-во элементов больше своих соседей");
                         lbMain.Items.Add(k);
@@ -217,11 +232,13 @@ namespace T_P_lb1
                         int number;
                         bool k = false;
                         lbMain.Items.Clear();
+                        myAL_g = new int[itemCount];
                         myAL = new int[itemCount];
                         for (index = 0; index < itemCount; index++)
                         {
                             number = -100 + rnd1.Next(200);
                             myAL[index] = number;
+                            myAL_g[index] = number;
                             lbMain.Items.Add(number);
                         }
                         for (int i = 0; i < itemCount; i++)
@@ -271,11 +288,13 @@ namespace T_P_lb1
                         int number;
                         int sum = 0;
                         lbMain.Items.Clear();
+                        myAL_g = new int[itemCount];
                         myAL = new int[itemCount];
                         for (index = 0; index < itemCount; index++)
                         {
                             number = -100 + rnd1.Next(200);
                             myAL[index] = number;
+                            myAL_g[index] = number;
                             lbMain.Items.Add(number);
                         }
                         for (int i = 0; i < itemCount; i++)
@@ -527,6 +546,27 @@ namespace T_P_lb1
             catch (System.FormatException)
             {
                 MessageBox.Show("Введите число без вещественной части!");
+            }
+        }
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+            double p = 1.0 / myAL_g.Length;
+            int len = myAL_g.Length;
+            double sum = 0;
+            for (int i = 0; i < len; i++)
+            {
+                sum += myAL_g[i] * p;
+            }
+            for(int i = 0; i < len; i++)
+            {
+                if (myAL_g[i] > sum)
+                {
+                    lbMain.Items.Add("Номер элемента большего мат ожидания");
+                    lbMain.Items.Add(i + 1);
+                    break;
+
+                }
             }
         }
     }

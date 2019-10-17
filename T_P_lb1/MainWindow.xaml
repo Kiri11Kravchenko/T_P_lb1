@@ -11,6 +11,7 @@
         <Menu x:Name="menu" HorizontalAlignment="Left" Height="21" Margin="0,-3,0,0" VerticalAlignment="Top" Width="416">
             <MenuItem Header="Меню">
                 <MenuItem Header="About" Click="MenuItem_Click"/>
+                <MenuItem Header="math_ex" Click="MenuItem_Click_2"/>
                 <MenuItem Header="Exit" Click="MenuItem_Click_1"/>
             </MenuItem>
         </Menu>
