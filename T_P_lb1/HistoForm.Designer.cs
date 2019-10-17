@@ -28,12 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.picHisto = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picHisto)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // picHisto
+            // 
+            this.picHisto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picHisto.Location = new System.Drawing.Point(0, 0);
+            this.picHisto.Name = "picHisto";
+            this.picHisto.Size = new System.Drawing.Size(800, 450);
+            this.picHisto.TabIndex = 0;
+            this.picHisto.TabStop = false;
+            // 
+            // HistoForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.picHisto);
+            this.Name = "HistoForm";
             this.Text = "HistoForm";
+            ((System.ComponentModel.ISupportInitialize)(this.picHisto)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.PictureBox picHisto;
     }
 }

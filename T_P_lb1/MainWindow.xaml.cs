@@ -27,7 +27,7 @@ namespace T_P_lb1
             InitializeComponent();
         }
         int[] myAL_g;
-
+        HistoForm f = new HistoForm();
         private void Btn_1_Click(object sender, RoutedEventArgs e)
         {
             ArrayList myAL = new ArrayList();
@@ -589,6 +589,12 @@ namespace T_P_lb1
             lbMain.Items.Add(sum);
 
 
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            f.flag = true;
+            this.Close();
         }
     }
 }
