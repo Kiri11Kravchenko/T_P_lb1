@@ -92,7 +92,7 @@ namespace T_P_lb1
                         lbMain.Items.Clear();
                         myAL_g = new int[itemCount];
                         lbMain.Items.Add("Исходный массив");
-                        for (index = 1; index <= itemCount; index++)
+                        for (index = 0; index < itemCount; index++)
                         {
                             number = -100 + rnd1.Next(200);
                             myAL.Add(number);
@@ -568,6 +568,27 @@ namespace T_P_lb1
 
                 }
             }
+        }
+
+        private void MenuItem_Click_3(object sender, RoutedEventArgs e)
+        {
+            int sum = 0;
+            int len = myAL_g.Length;
+            for(int i = 01; i < len; i++)
+            {
+                if (myAL_g[i-1] < myAL_g[i])
+                {
+                    sum++;
+                }
+            }
+            if (myAL_g[len - 1] < myAL_g[0])
+            {
+                sum++;
+            }
+            lbMain.Items.Add("Количество элементов образующих упорядоченную последовательность");
+            lbMain.Items.Add(sum);
+
+
         }
     }
 }
