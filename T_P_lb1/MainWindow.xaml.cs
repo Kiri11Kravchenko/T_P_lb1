@@ -615,7 +615,7 @@ namespace T_P_lb1
             {
                 if (f.val[i] > sum)
                 {
-                    lbMain.Items.Add("Номер элемента больше мат ожидания ");
+                    lbMain.Items.Add("Номер элемента больше мат ожидания");
                     lbMain.Items.Add(i + 1);
                     break;
                 }
