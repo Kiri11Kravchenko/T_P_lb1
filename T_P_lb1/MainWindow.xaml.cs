@@ -57,6 +57,7 @@ namespace T_P_lb1
                             f.val[index] = number;
                             lbMain.Items.Add(number);
                         }
+                       
                     }
                 }
 
@@ -640,9 +641,9 @@ namespace T_P_lb1
         {
             int n = a.Length;
             int count = 0;
-            for(int i = 0; i < n; i++)
+            for(int i = 1; i < n-1; i++)
             {
-                if (a[i] < a[i + 1] && a[i + 1] > a[i + 2] && a[i + 1] > a[i + 3] && a[i + 1] > a[n - i])
+                if (a[i-1] < a[i] && a[i] > a[i + 1])
                 {
                     count++;
                 }
@@ -668,6 +669,12 @@ namespace T_P_lb1
                 f.Show();
                 f.Refresh();
             }
+        }
+
+        private void MenuItem_Click_5(object sender, RoutedEventArgs e)
+        {
+            lbMain.Items.Add("text");
+            lbMain.Items.Add(neibors(myAL_g));
         }
     }
 }

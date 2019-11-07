@@ -11,6 +11,7 @@
         <Menu x:Name="menu" HorizontalAlignment="Left" Height="21" Margin="0,-3,0,0" VerticalAlignment="Top" Width="416">
             <MenuItem Header="Меню">
                 <MenuItem Header="About" Click="MenuItem_Click"/>
+                <MenuItem Header="Neibor" Click="MenuItem_Click_5"/>
                 <MenuItem Header="Histogram" Click="MenuItem_Click_4"/>
                 <MenuItem Header="order" Click="MenuItem_Click_3"/>
                 <MenuItem Header="math_ex" Click="MenuItem_Click_2"/>
