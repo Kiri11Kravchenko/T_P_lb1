@@ -604,6 +604,19 @@ namespace T_P_lb1
 
 
         }
+         int neibors(int []a)
+        {
+            int n = a.Length;
+            int count = 0;
+            for(int i = 0; i < n; i++)
+            {
+                if (a[i] < a[i + 1] && a[i + 1] > a[i + 2] && a[i + 1] > a[i + 3] && a[i + 1] > a[n - i])
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
 
         private void Window_Closed(object sender, EventArgs e)
         {
