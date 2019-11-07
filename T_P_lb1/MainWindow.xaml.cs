@@ -28,7 +28,7 @@ namespace T_P_lb1
         }
         int[] myAL_g;
         HistoForm f = new HistoForm();
-        private void Btn_1_Click(object sender, RoutedEventArgs e)
+        public void btn1_click()
         {
             ArrayList myAL = new ArrayList();
             int index;
@@ -73,8 +73,7 @@ namespace T_P_lb1
                 MessageBox.Show("Введите число без вещественной части!");
             }
         }
-
-        private void Btn_2_Click(object sender, RoutedEventArgs e)
+        public void btn2_click()
         {
             ArrayList myAL = new ArrayList();
             int index;
@@ -121,42 +120,7 @@ namespace T_P_lb1
                 MessageBox.Show("Введите число без вещественной части!");
             }
         }
-
-        private void Btn_save_Click(object sender, RoutedEventArgs e)
-        {
-            SaveFileDialog myDialog = new SaveFileDialog();
-            myDialog.Filter = "Текст(*.TXT)|*.TXT" + "|Все файлы (*.*)|*.* ";
-
-            if (myDialog.ShowDialog() == true)
-            {
-                string filename = myDialog.FileName;
-                using (System.IO.StreamWriter file = new System.IO.StreamWriter(filename, false))
-                {
-                    foreach (Object item in lbMain.Items)
-                    {
-                        file.WriteLine(item);
-                    }
-                }
-            }
-        }
-
-        private void Btn_exit_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            About about = new About();
-            about.Show();
-        }
-
-        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void Btn_z1_Click(object sender, RoutedEventArgs e)
+        public void btnz1_click()
         {
             int[] myAL;
             int index;
@@ -193,7 +157,7 @@ namespace T_P_lb1
                             {
                                 k++;
                             }
-                            
+
                         }
                         if (myAL[0] > myAL[1] && myAL[0] > myAL[itemCount - 1])
                         {
@@ -217,8 +181,7 @@ namespace T_P_lb1
                 MessageBox.Show("Введите число без вещественной части!");
             }
         }
-
-        private void Btn_z2_Click(object sender, RoutedEventArgs e)
+        public void btnz2_click()
         {
             int[] myAL;
             int index;
@@ -275,8 +238,7 @@ namespace T_P_lb1
                 MessageBox.Show("Введите число без вещественной части!");
             }
         }
-
-        private void Btn_z3_Click(object sender, RoutedEventArgs e)
+        public void btnz3_click()
         {
             int[] myAL;
             int index;
@@ -331,10 +293,8 @@ namespace T_P_lb1
                 MessageBox.Show("Введите число без вещественной части!");
             }
         }
-
-        private void Btn_z4_Click(object sender, RoutedEventArgs e)
+        public void btnz4_click()
         {
-
             int index;
 
             try
@@ -374,6 +334,165 @@ namespace T_P_lb1
             {
                 MessageBox.Show("Введите число без вещественной части!");
             }
+        }
+        public void btnz5_click()
+        {
+            int index;
+
+            try
+            {
+                try
+                {
+                    int itemCount = Convert.ToInt32(tbN.Text);
+                    if (itemCount < 0)
+                    {
+                        MessageBox.Show("Введите положителное число!");
+                    }
+                    else
+                    {
+                        Random rnd1 = new Random();
+                        int number;
+
+                        lbMain.Items.Clear();
+                        myAL_g = new int[itemCount];
+                        f.val = new int[itemCount];
+                        for (index = 0; index < itemCount; index++)
+                        {
+                            number = 0 + rnd1.Next(200);
+                            myAL_g[index] = number;
+                            f.val[index] = number;
+                            lbMain.Items.Add(number);
+                        }
+                        InputBox1.Visibility = System.Windows.Visibility.Visible;
+
+                    }
+                }
+                catch (System.OverflowException)
+                {
+                    MessageBox.Show("Выход за пределы типа!");
+                }
+            }
+            catch (System.FormatException)
+            {
+                MessageBox.Show("Введите число без вещественной части!");
+            }
+        }
+        public void btnz6_click()
+        {
+            int[] myAL;
+            int index;
+            try
+            {
+                try
+                {
+                    int itemCount = Convert.ToInt32(tbN.Text);
+                    if (itemCount < 0)
+                    {
+                        MessageBox.Show("Введите положителное число!");
+                    }
+                    else
+                    {
+                        Random rnd1 = new Random();
+                        myAL = new int[itemCount];
+                        f.val = new int[itemCount];
+                        lbMain.Items.Clear();
+                        for (index = 0; index < itemCount; index++)
+                        {
+                            myAL[index] = 0 + rnd1.Next(200);
+
+                            f.val[index] = myAL[index];
+                        }
+                        for (int i = 1; i < itemCount - 1; i++)
+                        {
+
+                            if (myAL[i] > myAL[i - 1] && myAL[i] > myAL[i + 1])
+                            {
+                                ListBoxItem item = new ListBoxItem();
+                                item.Content = Convert.ToString(myAL[i]);
+                                item.Foreground = Brushes.Black;
+                                item.Background = Brushes.LightSkyBlue;
+                                lbMain.Items.Add(item);
+                            }
+
+                            lbMain.Items.Add(myAL[i]);
+
+                        }
+
+                    }
+                }
+                catch (System.OverflowException)
+                {
+                    MessageBox.Show("Выход за пределы типа !");
+                }
+            }
+            catch (System.FormatException)
+            {
+                MessageBox.Show("Введите число без вещественной части!");
+            }
+        }
+        private void Btn_1_Click(object sender, RoutedEventArgs e)
+        {
+            btn1_click();
+        }
+
+        private void Btn_2_Click(object sender, RoutedEventArgs e)
+        {
+            btn2_click();
+        }
+
+        private void Btn_save_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog myDialog = new SaveFileDialog();
+            myDialog.Filter = "Текст(*.TXT)|*.TXT" + "|Все файлы (*.*)|*.* ";
+
+            if (myDialog.ShowDialog() == true)
+            {
+                string filename = myDialog.FileName;
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter(filename, false))
+                {
+                    foreach (Object item in lbMain.Items)
+                    {
+                        file.WriteLine(item);
+                    }
+                }
+            }
+        }
+
+        private void Btn_exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            About about = new About();
+            about.Show();
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Btn_z1_Click(object sender, RoutedEventArgs e)
+        {
+            btnz1_click();
+        }
+
+        private void Btn_z2_Click(object sender, RoutedEventArgs e)
+        {
+            btnz2_click();
+        }
+
+        private void Btn_z3_Click(object sender, RoutedEventArgs e)
+        {
+            btnz3_click();
+        }
+
+        private void Btn_z4_Click(object sender, RoutedEventArgs e)
+        {
+
+            btnz4_click();
         }
         private void YesButton_Click(object sender, RoutedEventArgs e)
         {
@@ -468,99 +587,12 @@ namespace T_P_lb1
 
         private void Btn_z5_Click(object sender, RoutedEventArgs e)
         {
-            int index;
-
-            try
-            {
-                try
-                {
-                    int itemCount = Convert.ToInt32(tbN.Text);
-                    if (itemCount < 0)
-                    {
-                        MessageBox.Show("Введите положителное число!");
-                    }
-                    else
-                    {
-                        Random rnd1 = new Random();
-                        int number;
-
-                        lbMain.Items.Clear();
-                        myAL_g = new int[itemCount];
-                        f.val = new int[itemCount];
-                        for (index = 0; index < itemCount; index++)
-                        {
-                            number = 0 + rnd1.Next(200);
-                            myAL_g[index] = number;
-                            f.val[index] = number;
-                            lbMain.Items.Add(number);
-                        }
-                        InputBox1.Visibility = System.Windows.Visibility.Visible;
-
-                    }
-                }
-                catch (System.OverflowException)
-                {
-                    MessageBox.Show("Выход за пределы типа!");
-                }
-            }
-            catch (System.FormatException)
-            {
-                MessageBox.Show("Введите число без вещественной части!");
-            }
+            btnz5_click();
         }
 
         private void Btn_z6_Click(object sender, RoutedEventArgs e)
         {
-            int[] myAL;
-            int index;
-            try
-            {
-                try
-                {
-                    int itemCount = Convert.ToInt32(tbN.Text);
-                    if (itemCount < 0)
-                    {
-                        MessageBox.Show("Введите положителное число!");
-                    }
-                    else
-                    {
-                        Random rnd1 = new Random();
-                        myAL = new int[itemCount];
-                        f.val = new int[itemCount];
-                        lbMain.Items.Clear();
-                        for (index = 0; index < itemCount; index++)
-                        {
-                            myAL[index] = 0 + rnd1.Next(200);
-
-                            f.val[index] = myAL[index];
-                        }
-                        for (int i = 1; i < itemCount - 1; i++)
-                        {
-
-                            if (myAL[i] > myAL[i - 1] && myAL[i] > myAL[i + 1])
-                            {
-                                ListBoxItem item = new ListBoxItem();
-                                item.Content = Convert.ToString(myAL[i]);
-                                item.Foreground = Brushes.Black;
-                                item.Background = Brushes.LightSkyBlue;
-                                lbMain.Items.Add(item);
-                            }
-
-                            lbMain.Items.Add(myAL[i]);
-
-                        }
-
-                    }
-                }
-                catch (System.OverflowException)
-                {
-                    MessageBox.Show("Выход за пределы типа !");
-                }
-            }
-            catch (System.FormatException)
-            {
-                MessageBox.Show("Введите число без вещественной части!");
-            }
+            btnz6_click();
         }
 
         private void MenuItem_Click_2(object sender, RoutedEventArgs e)
