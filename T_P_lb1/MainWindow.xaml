@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:T_P_lb1"
         mc:Ignorable="d"
-        Title="Лабораторная работа 1" Height="366" Width="422" MinHeight="350" MinWidth="400" ResizeMode="NoResize" Closed="Window_Closed">
+        Title="Лабораторная работа 1" Height="402" Width="436" MinHeight="350" MinWidth="400" ResizeMode="NoResize" Closed="Window_Closed">
     <Grid>
-        <ListBox x:Name="lbMain" HorizontalAlignment="Left" Height="278" Margin="168,43,0,0" VerticalAlignment="Top" Width="224"/>
+        <ListBox x:Name="lbMain" HorizontalAlignment="Left" Height="304" Margin="168,43,0,0" VerticalAlignment="Top" Width="224"/>
         <Menu x:Name="menu" HorizontalAlignment="Left" Height="21" Margin="0,-3,0,0" VerticalAlignment="Top" Width="416">
             <MenuItem Header="Меню">
                 <MenuItem Header="About" Click="MenuItem_Click"/>
@@ -23,8 +23,8 @@
         <TextBox x:Name="tbN" HorizontalAlignment="Left" Height="23" Margin="21,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129"/>
         <Button x:Name="btn_1" Content="Расчет" HorizontalAlignment="Left" Margin="21,76,0,0" VerticalAlignment="Top" Width="129" Click="Btn_1_Click"/>
         <Button x:Name="btn_2" Content="Расчет 1" HorizontalAlignment="Left" Margin="21,101,0,0" VerticalAlignment="Top" Width="129" Click="Btn_2_Click"/>
-        <Button x:Name="btn_save" Content="Сохранить" HorizontalAlignment="Left" Margin="21,276,0,0" VerticalAlignment="Top" Width="129" Click="Btn_save_Click"/>
-        <Button x:Name="btn_exit" Content="Cancel" HorizontalAlignment="Left" Margin="21,301,0,0" VerticalAlignment="Top" Width="129" Click="Btn_exit_Click"/>
+        <Button x:Name="btn_save" Content="Сохранить" HorizontalAlignment="Left" Margin="21,301,0,0" VerticalAlignment="Top" Width="129" Click="Btn_save_Click"/>
+        <Button x:Name="btn_exit" Content="Cancel" HorizontalAlignment="Left" Margin="21,327,0,0" VerticalAlignment="Top" Width="129" Click="Btn_exit_Click"/>
         <Button x:Name="btn_z1" Content="Задание 1" HorizontalAlignment="Left" Margin="21,126,0,0" VerticalAlignment="Top" Width="129" Click="Btn_z1_Click"/>
         <Button x:Name="btn_z2" Content="Задание 2" HorizontalAlignment="Left" Margin="21,151,0,0" VerticalAlignment="Top" Width="129" Click="Btn_z2_Click"/>
         <Button x:Name="btn_z3" Content="Задание 3" HorizontalAlignment="Left" Margin="21,176,0,0" VerticalAlignment="Top" Width="129" Click="Btn_z3_Click"/>
@@ -71,5 +71,6 @@
                 </StackPanel>
             </Border>
         </Grid>
+        <Button x:Name="btn_math_def" Content="Отклонение" HorizontalAlignment="Left" Margin="21,276,0,0" VerticalAlignment="Top" Width="129" Click="Btn_math_def_Click"/>
     </Grid>
 </Window>

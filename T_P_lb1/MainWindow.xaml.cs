@@ -697,6 +697,12 @@ namespace T_P_lb1
             lbMain.Items.Add("text");
             lbMain.Items.Add(neibors(myAL_g));
         }
+
+        private void Btn_math_def_Click(object sender, RoutedEventArgs e)
+        {
+            
+           
+        }
     }
 }
     
