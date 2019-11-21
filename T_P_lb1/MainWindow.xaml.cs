@@ -27,6 +27,7 @@ namespace T_P_lb1
             InitializeComponent();
         }
         int[] myAL_g;
+        double mo, sr;
         HistoForm f = new HistoForm();
         public void gen(int a,int b,int [] array)
         {
@@ -700,8 +701,26 @@ namespace T_P_lb1
 
         private void Btn_math_def_Click(object sender, RoutedEventArgs e)
         {
-            
-           
+            if (myAL_g != null)
+            {
+                math();
+                lbMain.Items.Add("Мат.ожидание=" + mo);
+                lbMain.Items.Add("Измененнный массив");
+                for (int i = 0; i < myAL_g.Length; i++)
+                {
+                    lbMain.Items.Add(myAL_g[i] - mo);
+                }
+            }
+            else MessageBox.Show("Массив не сформиован");
+        }
+        void math()
+        {
+            int s = 0;
+            for(int i = 0; i < myAL_g.Length; i++)
+            {
+                s += myAL_g[i];
+            }
+            mo = s / myAL_g.Length;
         }
     }
 }
