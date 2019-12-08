@@ -741,6 +741,106 @@ namespace T_P_lb1
             else MessageBox.Show("Массив не сформиован");
         }
 
+        private void MenuItem_Click_7(object sender, RoutedEventArgs e)
+        {
+            if (myAL_g != null)
+            {
+
+                float m = 0;
+                ArrayList myAL = new ArrayList();
+                for (int i = 0; i < myAL_g.Length; i++)
+                {
+
+                    m = m + myAL_g[i];
+
+                }
+                m = m / myAL_g.Length;
+                lbMain.Items.Add("Математическое ожидание:");
+                lbMain.Items.Add(m);
+                float s = 0; float max = 0;
+
+                for (int i = 0; i < myAL_g.Length; i++)
+                {
+
+
+                    max = myAL_g[i] - m;
+                    Math.Abs(max);
+                    if (max > s) { s = max; }
+
+                }
+                float x;
+                s = s / 2;
+                lbMain.Items.Add("Максимальное отклонение:");
+                lbMain.Items.Add(s);
+                lbMain.Items.Add(" ");
+                lbMain.Items.Add("измененный массив:");
+                float k;
+                for (int i = 0; i < myAL_g.Length; i++)
+                {
+
+
+                    k = myAL_g[i] - m;
+                    Math.Abs(k);
+                    if (Math.Abs(k) > s) {
+                        x = m / k;
+                        myAL.Add(myAL_g[i] - x); lbMain.Items.Add(myAL_g[i] - x);
+                    } // 
+                    else { myAL.Add(myAL_g[i]); lbMain.Items.Add(myAL_g[i]); }
+                }
+            }
+            else MessageBox.Show("Массив не сформиован");
+            }
+
+        private void MenuItem_Click_8(object sender, RoutedEventArgs e)
+        {
+            if (myAL_g != null)
+            {
+                float m = 0;
+                ArrayList myAL = new ArrayList();
+                for (int i = 0; i < myAL_g.Length; i++)
+                {
+
+                    m = m + myAL_g[i];
+
+                }
+                m = m / myAL_g.Length;
+                lbMain.Items.Add("Математическое ожидание:");
+                lbMain.Items.Add(m);
+                float s = 0; float max = 0;
+
+                for (int i = 0; i < myAL_g.Length; i++)
+                {
+
+
+                    max = myAL_g[i] - m;
+                    Math.Abs(max);
+                    if (max > s) { s = max; }
+
+                }
+                float x;
+                s = s / 2;
+                lbMain.Items.Add("Максимальное отклонение:");
+                lbMain.Items.Add(s);
+                lbMain.Items.Add(" ");
+                lbMain.Items.Add("измененный массив");
+                float k;
+                for (int i = 0; i < myAL_g.Length; i++)
+                {
+
+
+                    k = myAL_g[i] - m;
+                    Math.Abs(k);
+                    if (Math.Abs(k) > s) { x = m / k;
+                        myAL.Add(myAL_g[i] + x);
+                        lbMain.Items.Add(myAL_g[i] + x); } 
+                    else { myAL.Add(myAL_g[i]); lbMain.Items.Add(myAL_g[i]); }
+
+                }
+            }
+            else MessageBox.Show("Массив не сформиован");
+
+        }
+
         void math()
         {
             int s = 0;
