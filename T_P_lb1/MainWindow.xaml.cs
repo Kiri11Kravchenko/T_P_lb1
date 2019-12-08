@@ -695,7 +695,7 @@ namespace T_P_lb1
 
         private void MenuItem_Click_5(object sender, RoutedEventArgs e)
         {
-            lbMain.Items.Add("text");
+            lbMain.Items.Add("Больше соседей");
             lbMain.Items.Add(neibors(myAL_g));
         }
 
@@ -713,6 +713,34 @@ namespace T_P_lb1
             }
             else MessageBox.Show("Массив не сформиован");
         }
+
+        private void MenuItem_Click_6(object sender, RoutedEventArgs e)
+        {
+            if (myAL_g != null)
+            {
+                int itemCount = myAL_g.Length;
+                int kol = 0;
+                for (int i = 2; i < myAL_g.Length - 2; i++)
+                {
+                    if (((myAL_g[i] > myAL_g[i - 1]) && (myAL_g[i - 1] > myAL_g[i - 2]) && (myAL_g[i] < myAL_g[i + 1]) && (myAL_g[i + 1] < myAL_g[i + 2])) || ((myAL_g[i] < myAL_g[i - 1]) && (myAL_g[i - 1] < myAL_g[i - 2]) && (myAL_g[i] > myAL_g[i + 1]) && (myAL_g[i + 1] > myAL_g[i + 2])))
+                        kol++;
+                }
+                if (((myAL_g[0] > myAL_g[itemCount - 1]) && (myAL_g[itemCount - 1] > myAL_g[itemCount - 2]) && (myAL_g[0] < myAL_g[1]) && (myAL_g[1] < myAL_g[2])) || ((myAL_g[0] < myAL_g[itemCount - 1]) && (myAL_g[itemCount - 1] < myAL_g[itemCount - 2]) && (myAL_g[0] > myAL_g[1]) && (myAL_g[1] > myAL_g[2])))
+                    kol++;
+                if (((myAL_g[itemCount - 1] > myAL_g[itemCount - 2]) && (myAL_g[itemCount - 2] > myAL_g[itemCount - 3]) && (myAL_g[itemCount - 1] < myAL_g[0]) && (myAL_g[0] < myAL_g[1])) || ((myAL_g[itemCount - 1] < myAL_g[itemCount - 2]) && (myAL_g[itemCount - 2] < myAL_g[itemCount - 3]) && (myAL_g[itemCount - 1] > myAL_g[0]) && (myAL_g[0] > myAL_g[1])))
+                    kol++;
+                if (((myAL_g[1] > myAL_g[0]) && (myAL_g[0] > myAL_g[itemCount - 1]) && (myAL_g[1] < myAL_g[2]) && (myAL_g[2] < myAL_g[3])) || ((myAL_g[1] < myAL_g[0]) && (myAL_g[0] < myAL_g[itemCount - 1]) && (myAL_g[1] > myAL_g[2]) && (myAL_g[2] > myAL_g[3])))
+                    kol++;
+                if (((myAL_g[itemCount - 2] > myAL_g[itemCount - 3]) && (myAL_g[itemCount - 3] > myAL_g[itemCount - 4]) && (myAL_g[itemCount - 2] < myAL_g[itemCount - 1]) && (myAL_g[itemCount - 1] < myAL_g[0])) || ((myAL_g[itemCount - 2] < myAL_g[itemCount - 3]) && (myAL_g[itemCount - 3] < myAL_g[itemCount - 4]) && (myAL_g[itemCount - 2] > myAL_g[itemCount - 1]) && (myAL_g[itemCount - 1] > myAL_g[0])))
+                    kol++;
+
+
+                lbMain.Items.Add("Количество элементов, которые составляют упорядоченную последовательность с элементами [i-2;i+2] , где i текущий элемент");
+                lbMain.Items.Add(kol);
+            }
+            else MessageBox.Show("Массив не сформиован");
+        }
+
         void math()
         {
             int s = 0;

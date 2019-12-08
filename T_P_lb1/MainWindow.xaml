@@ -5,35 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:T_P_lb1"
         mc:Ignorable="d"
-        Title="Лабораторная работа 1" Height="402" Width="436" MinHeight="350" MinWidth="400" ResizeMode="NoResize" Closed="Window_Closed">
-    <Grid>
-        <ListBox x:Name="lbMain" HorizontalAlignment="Left" Height="304" Margin="168,43,0,0" VerticalAlignment="Top" Width="224"/>
-        <Menu x:Name="menu" HorizontalAlignment="Left" Height="21" Margin="0,-3,0,0" VerticalAlignment="Top" Width="416">
-            <MenuItem Header="Меню">
-                <MenuItem Header="About" Click="MenuItem_Click"/>
-                <MenuItem Header="Neibor" Click="MenuItem_Click_5"/>
-                <MenuItem Header="Histogram" Click="MenuItem_Click_4"/>
-                <MenuItem Header="order" Click="MenuItem_Click_3"/>
-                <MenuItem Header="math_ex" Click="MenuItem_Click_2"/>
-                <MenuItem Header="Exit" Click="MenuItem_Click_1"/>
-            </MenuItem>
-        </Menu>
-        <Label Content="Результат" HorizontalAlignment="Left" Margin="241,17,0,0" VerticalAlignment="Top"/>
-        <Label Content="Количество элементов" HorizontalAlignment="Left" Margin="21,17,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbN" HorizontalAlignment="Left" Height="23" Margin="21,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129"/>
-        <Button x:Name="btn_1" Content="Расчет" HorizontalAlignment="Left" Margin="21,76,0,0" VerticalAlignment="Top" Width="129" Click="Btn_1_Click"/>
-        <Button x:Name="btn_2" Content="Расчет 1" HorizontalAlignment="Left" Margin="21,101,0,0" VerticalAlignment="Top" Width="129" Click="Btn_2_Click"/>
-        <Button x:Name="btn_save" Content="Сохранить" HorizontalAlignment="Left" Margin="21,301,0,0" VerticalAlignment="Top" Width="129" Click="Btn_save_Click"/>
-        <Button x:Name="btn_exit" Content="Cancel" HorizontalAlignment="Left" Margin="21,327,0,0" VerticalAlignment="Top" Width="129" Click="Btn_exit_Click"/>
-        <Button x:Name="btn_z1" Content="Задание 1" HorizontalAlignment="Left" Margin="21,126,0,0" VerticalAlignment="Top" Width="129" Click="Btn_z1_Click"/>
-        <Button x:Name="btn_z2" Content="Задание 2" HorizontalAlignment="Left" Margin="21,151,0,0" VerticalAlignment="Top" Width="129" Click="Btn_z2_Click"/>
-        <Button x:Name="btn_z3" Content="Задание 3" HorizontalAlignment="Left" Margin="21,176,0,0" VerticalAlignment="Top" Width="129" Click="Btn_z3_Click"/>
-        <Button x:Name="btn_z4" Content="Задание 4" HorizontalAlignment="Left" Margin="21,201,0,0" VerticalAlignment="Top" Width="129" Click="Btn_z4_Click"/>
-        <Button x:Name="btn_z5" Content="Задание 5" HorizontalAlignment="Left" Margin="21,226,0,0" VerticalAlignment="Top" Width="129" Click="Btn_z5_Click"/>
-        <Button x:Name="btn_z6" Content="Задание 6" HorizontalAlignment="Left" Margin="21,251,0,0" VerticalAlignment="Top" Width="129" Click="Btn_z6_Click"/>
-        <Grid x:Name="InputBox" Visibility="Collapsed">
-            <Grid Background="Gray" Opacity="0.4"/>
-            <Border
+        Title="Лабораторная работа 1" Height="402" Width="423" MinHeight="350" MinWidth="400" ResizeMode="NoResize" Closed="Window_Closed">
+  <Grid>
+    <ListBox x:Name="lbMain" HorizontalAlignment="Left" Height="304" Margin="168,43,0,0" VerticalAlignment="Top" Width="224"/>
+    <Menu x:Name="menu" HorizontalAlignment="Left" Height="21" Margin="0,-3,0,0" VerticalAlignment="Top" Width="416">
+      <MenuItem Header="Меню">
+        <MenuItem Header="About" Click="MenuItem_Click"/>
+        <MenuItem Header="i-2 i+2" Click="MenuItem_Click_6"/>
+        <MenuItem Header="Neibor" Click="MenuItem_Click_5"/>
+        <MenuItem Header="Histogram" Click="MenuItem_Click_4"/>
+        <MenuItem Header="order" Click="MenuItem_Click_3"/>
+        <MenuItem Header="math_ex" Click="MenuItem_Click_2"/>
+        <MenuItem Header="Exit" Click="MenuItem_Click_1"/>
+      </MenuItem>
+    </Menu>
+    <Label Content="Результат" HorizontalAlignment="Left" Margin="241,17,0,0" VerticalAlignment="Top"/>
+    <Label Content="Количество элементов" HorizontalAlignment="Left" Margin="21,17,0,0" VerticalAlignment="Top"/>
+    <TextBox x:Name="tbN" HorizontalAlignment="Left" Height="23" Margin="21,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129"/>
+    <Button x:Name="btn_1" Content="Расчет" HorizontalAlignment="Left" Margin="21,76,0,0" VerticalAlignment="Top" Width="129" Click="Btn_1_Click"/>
+    <Button x:Name="btn_2" Content="Расчет 1" HorizontalAlignment="Left" Margin="21,101,0,0" VerticalAlignment="Top" Width="129" Click="Btn_2_Click"/>
+    <Button x:Name="btn_save" Content="Сохранить" HorizontalAlignment="Left" Margin="21,301,0,0" VerticalAlignment="Top" Width="129" Click="Btn_save_Click"/>
+    <Button x:Name="btn_exit" Content="Cancel" HorizontalAlignment="Left" Margin="21,327,0,0" VerticalAlignment="Top" Width="129" Click="Btn_exit_Click"/>
+    <Button x:Name="btn_z1" Content="Задание 1" HorizontalAlignment="Left" Margin="21,126,0,0" VerticalAlignment="Top" Width="129" Click="Btn_z1_Click"/>
+    <Button x:Name="btn_z2" Content="Задание 2" HorizontalAlignment="Left" Margin="21,151,0,0" VerticalAlignment="Top" Width="129" Click="Btn_z2_Click"/>
+    <Button x:Name="btn_z3" Content="Задание 3" HorizontalAlignment="Left" Margin="21,176,0,0" VerticalAlignment="Top" Width="129" Click="Btn_z3_Click"/>
+    <Button x:Name="btn_z4" Content="Задание 4" HorizontalAlignment="Left" Margin="21,201,0,0" VerticalAlignment="Top" Width="129" Click="Btn_z4_Click"/>
+    <Button x:Name="btn_z5" Content="Задание 5" HorizontalAlignment="Left" Margin="21,226,0,0" VerticalAlignment="Top" Width="129" Click="Btn_z5_Click"/>
+    <Button x:Name="btn_z6" Content="Задание 6" HorizontalAlignment="Left" Margin="21,251,0,0" VerticalAlignment="Top" Width="129" Click="Btn_z6_Click"/>
+    <Grid x:Name="InputBox" Visibility="Collapsed">
+      <Grid Background="Gray" Opacity="0.4"/>
+      <Border
             MinWidth="150"
             Background="Green" 
             BorderBrush="Black" 
@@ -41,36 +42,36 @@
             CornerRadius="0,55,0,55" 
             HorizontalAlignment="Left" 
             VerticalAlignment="Center">
-                <StackPanel>
-                    <TextBlock Margin="5" Text="Inter numeric:" FontWeight="Bold" FontFamily="Cambria" />
-                    <TextBox MinWidth="100" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="InputTextBox"/>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Button x:Name="YesButton" Margin="5" Content="Ok" Background="{x:Null}" Click="YesButton_Click"/>
-                        <Button x:Name="NoButton" Margin="5" Content="Cancel" Background="{x:Null}" Click="NoButton_Click" />
-                    </StackPanel>
-                </StackPanel>
-            </Border>
-        </Grid>
-        <Grid x:Name="InputBox1" Visibility="Collapsed">
-            <Grid Background="Gray" Opacity="0.5"/>
-            <Border
-            MinWidth="150"
-            Background="Green" 
-            BorderBrush="Black" 
-            BorderThickness="1" 
-            CornerRadius="0,55,0,55" 
-            HorizontalAlignment="Left" 
-            VerticalAlignment="Center">
-                <StackPanel>
-                    <TextBlock Margin="5" Text="Inter numeric:" FontWeight="Bold" FontFamily="Cambria" />
-                    <TextBox MinWidth="100" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="InputTextBox1"/>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Button x:Name="YesButton1" Margin="5" Content="Ok" Background="{x:Null}" Click="YesButton1_Click"/>
-                        <Button x:Name="NoButton1" Margin="5" Content="Cancel" Background="{x:Null}" Click="NoButton1_Click" />
-                    </StackPanel>
-                </StackPanel>
-            </Border>
-        </Grid>
-        <Button x:Name="btn_math_def" Content="Отклонение" HorizontalAlignment="Left" Margin="21,276,0,0" VerticalAlignment="Top" Width="129" Click="Btn_math_def_Click"/>
+        <StackPanel>
+          <TextBlock Margin="5" Text="Inter numeric:" FontWeight="Bold" FontFamily="Cambria" />
+          <TextBox MinWidth="100" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="InputTextBox"/>
+          <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="YesButton" Margin="5" Content="Ok" Background="{x:Null}" Click="YesButton_Click"/>
+            <Button x:Name="NoButton" Margin="5" Content="Cancel" Background="{x:Null}" Click="NoButton_Click" />
+          </StackPanel>
+        </StackPanel>
+      </Border>
     </Grid>
+    <Grid x:Name="InputBox1" Visibility="Collapsed">
+      <Grid Background="Gray" Opacity="0.5"/>
+      <Border
+            MinWidth="150"
+            Background="Green" 
+            BorderBrush="Black" 
+            BorderThickness="1" 
+            CornerRadius="0,55,0,55" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Center">
+        <StackPanel>
+          <TextBlock Margin="5" Text="Inter numeric:" FontWeight="Bold" FontFamily="Cambria" />
+          <TextBox MinWidth="100" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="InputTextBox1"/>
+          <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="YesButton1" Margin="5" Content="Ok" Background="{x:Null}" Click="YesButton1_Click"/>
+            <Button x:Name="NoButton1" Margin="5" Content="Cancel" Background="{x:Null}" Click="NoButton1_Click" />
+          </StackPanel>
+        </StackPanel>
+      </Border>
+    </Grid>
+    <Button x:Name="btn_math_def" Content="Отклонение" HorizontalAlignment="Left" Margin="21,276,0,0" VerticalAlignment="Top" Width="129" Click="Btn_math_def_Click"/>
+  </Grid>
 </Window>
