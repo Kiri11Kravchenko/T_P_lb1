@@ -718,6 +718,7 @@ namespace T_P_lb1
         {
             if (myAL_g != null)
             {
+                
                 int itemCount = myAL_g.Length;
                 int kol = 0;
                 for (int i = 2; i < myAL_g.Length - 2; i++)
@@ -745,7 +746,7 @@ namespace T_P_lb1
         {
             if (myAL_g != null)
             {
-
+                lbMain.Items.Clear();
                 float m = 0;
                 ArrayList myAL = new ArrayList();
                 for (int i = 0; i < myAL_g.Length; i++)
@@ -795,6 +796,7 @@ namespace T_P_lb1
         {
             if (myAL_g != null)
             {
+                lbMain.Items.Clear();
                 float m = 0;
                 ArrayList myAL = new ArrayList();
                 for (int i = 0; i < myAL_g.Length; i++)
