@@ -781,17 +781,20 @@ namespace T_P_lb1
 
 
                     k = myAL_g[i] - m;
+                    
                     Math.Abs(k);
-                    if (Math.Abs(k) > s) {
-                        x = m / k;
-                        myAL.Add(myAL_g[i] - x); lbMain.Items.Add(myAL_g[i] - x);
-                        f.val[i] = Convert.ToInt32(myAL_g[i] - x);
+                    if (k > s) {
+                        x = k/m;
+                        
+                        myAL.Add(Math.Abs(myAL_g[i] * x)); lbMain.Items.Add(Math.Abs(myAL_g[i] * x));
+                        f.val[i] = Convert.ToInt32(Math.Abs(myAL_g[i] * x));
 
                     } // 
                     else {
-                        myAL.Add(myAL_g[i]);
-                        lbMain.Items.Add(myAL_g[i]);
-                        f.val[i] = Convert.ToInt32(myAL_g[i]);
+                        x = k / m;
+                        myAL.Add(Math.Abs(myAL_g[i]*(x-1)));
+                        lbMain.Items.Add(Math.Abs(myAL_g[i]*(x+1)));
+                        f.val[i] = Convert.ToInt32(Math.Abs(myAL_g[i]*(x+1)));
                     }
                 }
             }
@@ -839,21 +842,27 @@ namespace T_P_lb1
                     k = myAL_g[i] - m;
                     Math.Abs(k);
                     if (Math.Abs(k) > s) {
-                        x = m / k;
-                        myAL.Add(myAL_g[i] + x);
-                        lbMain.Items.Add(myAL_g[i] + x);
-                        f.val[i] = Convert.ToInt32(myAL_g[i] + x);
+                        x = k / m;
+                        myAL.Add(Math.Abs(myAL_g[i] *x));
+                        lbMain.Items.Add(Math.Abs(myAL_g[i] *x));
+                        f.val[i] = Convert.ToInt32(Math.Abs(myAL_g[i] *x));
                     } 
                     else {
-                        myAL.Add(myAL_g[i]);
-                        lbMain.Items.Add(myAL_g[i]);
-                        f.val[i] = Convert.ToInt32(myAL_g[i]);
+                        x = k / m;
+                        myAL.Add(Math.Abs(myAL_g[i]));
+                        lbMain.Items.Add(Math.Abs(myAL_g[i]));
+                        f.val[i] = Convert.ToInt32(Math.Abs(myAL_g[i]));
                     }
 
                 }
             }
             else MessageBox.Show("Массив не сформиован");
 
+        }
+
+        private void MenuItem_Click_9(object sender, RoutedEventArgs e)
+        {
+            lbMain.Items.Clear();
         }
 
         void math()
