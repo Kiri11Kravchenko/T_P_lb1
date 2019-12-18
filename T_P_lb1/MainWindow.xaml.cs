@@ -785,8 +785,14 @@ namespace T_P_lb1
                     if (Math.Abs(k) > s) {
                         x = m / k;
                         myAL.Add(myAL_g[i] - x); lbMain.Items.Add(myAL_g[i] - x);
+                        f.val[i] = Convert.ToInt32(myAL_g[i] - x);
+
                     } // 
-                    else { myAL.Add(myAL_g[i]); lbMain.Items.Add(myAL_g[i]); }
+                    else {
+                        myAL.Add(myAL_g[i]);
+                        lbMain.Items.Add(myAL_g[i]);
+                        f.val[i] = Convert.ToInt32(myAL_g[i]);
+                    }
                 }
             }
             else MessageBox.Show("Массив не сформиован");
@@ -832,10 +838,17 @@ namespace T_P_lb1
 
                     k = myAL_g[i] - m;
                     Math.Abs(k);
-                    if (Math.Abs(k) > s) { x = m / k;
+                    if (Math.Abs(k) > s) {
+                        x = m / k;
                         myAL.Add(myAL_g[i] + x);
-                        lbMain.Items.Add(myAL_g[i] + x); } 
-                    else { myAL.Add(myAL_g[i]); lbMain.Items.Add(myAL_g[i]); }
+                        lbMain.Items.Add(myAL_g[i] + x);
+                        f.val[i] = Convert.ToInt32(myAL_g[i] + x);
+                    } 
+                    else {
+                        myAL.Add(myAL_g[i]);
+                        lbMain.Items.Add(myAL_g[i]);
+                        f.val[i] = Convert.ToInt32(myAL_g[i]);
+                    }
 
                 }
             }
